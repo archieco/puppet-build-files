@@ -77,3 +77,9 @@ task :doc do
   module_path = "#{cwd}/modules"
   system("puppet doc --mode rdoc --manifestdir #{manifest_dir} --modulepath #{module_path}")
 end
+
+# build
+desc 'Build package for puppet forge.'
+task :build do
+  system('puppet module build .')
+end
